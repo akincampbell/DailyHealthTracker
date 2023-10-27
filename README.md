@@ -1,4 +1,8 @@
-# Rails Template
+# Daily Health Tracker
+
+Purpose of app: Track daily health and provide some static health information.
+
+---------------------------------------------------------------------------------------------------------
 
 This is a base Ruby on Rails repository configured for learning with Codespaces (and Gitpod).
 
