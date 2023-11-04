@@ -1,6 +1,6 @@
 # Daily Health Tracker
 
-Purpose of app: Track daily health and provide some static health information.
+Purpose of app: [Insert here]
 
 ---------------------------------------------------------------------------------------------------------
 
