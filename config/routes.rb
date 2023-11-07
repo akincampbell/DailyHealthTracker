@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
 
   # About page route
-  get("/about", { :controller => "application", :action => "about" })
+  get("/about", { :controller => "pages", :action => "about" })
 
   # Smart Health page route
-  get("/smart_health", { :controller => "application", :action => "smart_health" })
+  get("/smart_health", { :controller => "pages", :action => "smart_health" })
 end
