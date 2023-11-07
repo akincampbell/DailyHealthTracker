@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Daily Health Tracks and root routes
+  # root "tracks#index"
+  get("/", { :controller => "tracks", :action => "index" })
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get("/tracks/new", { :controller => "tracks", :action => "new" })
+
+  get("/tracks/index", { :controller => "tracks", :action => "index" })
+
+
+  # About page route
+  get("/about", { :controller => "application", :action => "about" })
+
+  # Smart Health page route
+  get("/smart_health", { :controller => "application", :action => "smart_health" })
 end
