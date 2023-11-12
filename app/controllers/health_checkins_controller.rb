@@ -1,6 +1,6 @@
 class HealthCheckinsController < ApplicationController
   def index
-    matching_health_checkins = HealthCheckin.all
+    matching_health_checkins = HealthCheckin.where({ :id => current_user.id }) # prev: HealthCheckin.all
 
     @list_of_health_checkins = matching_health_checkins.order({ :created_at => :desc })
 
