@@ -3,6 +3,7 @@
     <h2>
       Add a new health checkin
     </h2>
+    <!-- TODO: Add link for About page in span -->
     <span >Check the box if you met requirements for the respective category. If you need to be informed of food, water or exercise requirements, see the About page.</span>
 
     <hr class="mb-3">
@@ -38,14 +39,6 @@
       </div>
 
       <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
-
-      <div>
         <label for="weight_box">
           Weight
         </label>
@@ -57,6 +50,13 @@
         <input type="checkbox" id="exercise_box" name="query_exercise" value="1">
 
         <label for="exercise_box">Exercise</label>
+      </div>
+
+      <div class="mt-3">
+        <div>
+          <label for="journal_entry">Journal</label>
+        </div>
+        <textarea name="query_journal" id="journal_entry" cols="30" rows="5"></textarea>
       </div>
 
       <button class="btn btn-primary mt-3">
@@ -80,113 +80,71 @@
 
 
 <hr>
-<div>
-  <div>
-    <table border="1">
-      <tr>
-        <th>
-          ID
-        </th>
+  <!-- TODO: Style and add streaks -->
+  <% @list_of_health_checkins.each do |a_health_checkin| %>
+  <div class="card mb-4" style="background-color: #f8f9fa;">
+    <div class="card-body pl-4">
+      <div class="row card_content-wrapper">
+        <div class="col-sm">
+          <span class="fa-solid fa-bottle-water fa-2x" style="color: #0d6efd"></span>
+        </div>
 
-        <th>
-          Water
-        </th>
+        <div class="col-sm">
+          <span class="fa-solid fa-bowl-food fa-2x" style="color: #FFBF00"></span>
+        </div>
 
-        <th>
-          Grain
-        </th>
+        <div class="col-sm">
+          <span class="fa-solid fa-dumbbell fa-2x" style="color: purple"></span>
+        </div>
 
-        <th>
-          Protein
-        </th>
+        <div class="col-sm">
+          <span class="fa-solid fa-weight-scale fa-2x"></span>
+        </div>
 
-        <th>
-          Fruit
-        </th>
+        <div class="col-sm">
+          <span>
+            <b>Details</b>
+          </span>
+        </div>
+      </div>
 
-        <th>
-          Vegetable
-        </th>
+      <div class="row card_content-wrapper">
+        <div class="col-sm">
+          <% if a_health_checkin.water %>
+            <span class="fa-solid fa-check fa-2x" style="color:green"></span>
+          <% else %>
+            <span class="fa-solid fa-x fa-2x" style="color:red"></span>
+          <% end %>
+        </div>
 
-        <th>
-          User
-        </th>
+        <div class="col-sm">
+          <% if a_health_checkin.grain && a_health_checkin.protein && a_health_checkin.fruit && a_health_checkin.vegetable %>
+            <span class="fa-solid fa-check fa-2x" style="color:green"></span>
+          <% else %>
+            <span class="fa-solid fa-x fa-2x" style="color:red"></span>
+          <% end %>
+        </div>
 
-        <th>
-          Weight
-        </th>
+        <div class="col-sm">
+          <% if a_health_checkin.exercise %>
+            <span class="fa-solid fa-check fa-2x" style="color:green"></span>
+          <% else %>
+            <span class="fa-solid fa-x fa-2x" style="color:red"></span>
+          <% end %>
+        </div>
 
-        <th>
-          Exercise
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <!-- TODO: Style and add streaks -->
-      <% @list_of_health_checkins.each do |a_health_checkin| %>
-      <tr>
-        <td>
-          <%= a_health_checkin.id %>
-        </td>
-
-        <td>
-          <%= a_health_checkin.water %>
-        </td>
-
-        <td>
-          <%= a_health_checkin.grain %>
-        </td>
-
-        <td>
-          <%= a_health_checkin.protein %>
-        </td>
-
-        <td>
-          <%= a_health_checkin.fruit %>
-        </td>
-
-        <td>
-          <%= a_health_checkin.vegetable %>
-        </td>
-
-        <td>
-          <%= a_health_checkin.user_id %>
-        </td>
-
-        <td>
+        <div class="col-sm">
           <%= a_health_checkin.weight %>
-        </td>
+        </div>
 
-        <td>
-          <%= a_health_checkin.exercise %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_health_checkin.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_health_checkin.updated_at) %> ago
-        </td>
-
-        <td>
+        <div class="col-sm">
           <a href="/health_checkins/<%= a_health_checkin.id %>">
             Show details
           </a>
-        </td>
-      </tr>
-      <% end %>
-    </table>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  <% end %>
 
 <hr>

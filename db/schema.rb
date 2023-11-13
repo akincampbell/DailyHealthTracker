@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_11_172402) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_13_161829) do
   create_table "health_checkins", force: :cascade do |t|
     t.boolean "water"
     t.boolean "grain"
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_11_172402) do
     t.boolean "exercise"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "journal"
   end
 
   create_table "users", force: :cascade do |t|

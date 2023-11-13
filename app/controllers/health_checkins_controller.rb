@@ -1,6 +1,6 @@
 class HealthCheckinsController < ApplicationController
   def index
-    matching_health_checkins = HealthCheckin.where({ :id => current_user.id }) # prev: HealthCheckin.all
+    matching_health_checkins = HealthCheckin.where({ :user_id => current_user })
 
     @list_of_health_checkins = matching_health_checkins.order({ :created_at => :desc })
 
@@ -24,9 +24,12 @@ class HealthCheckinsController < ApplicationController
     the_health_checkin.protein = params.fetch("query_protein", false)
     the_health_checkin.fruit = params.fetch("query_fruit", false)
     the_health_checkin.vegetable = params.fetch("query_vegetable", false)
-    the_health_checkin.user_id = params.fetch("query_user_id")
-    the_health_checkin.weight = params.fetch("query_weight")
+    the_health_checkin.user_id = current_user.id
+    the_health_checkin.weight = params.fetch("query_weight", 0.00)
     the_health_checkin.exercise = params.fetch("query_exercise", false)
+    the_health_checkin.journal = params.fetch("query_journal", false)
+
+    # TODO: Check if other posts were made today
 
     if the_health_checkin.valid?
       the_health_checkin.save

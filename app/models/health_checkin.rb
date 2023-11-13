@@ -6,6 +6,7 @@
 #  exercise   :boolean
 #  fruit      :boolean
 #  grain      :boolean
+#  journal    :string
 #  protein    :boolean
 #  vegetable  :boolean
 #  water      :boolean
