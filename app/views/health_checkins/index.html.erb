@@ -6,6 +6,7 @@
     <!-- TODO: Add link for About page in span -->
     <span >Check the box if you met requirements for the respective category. If you need to be informed of food, water or exercise requirements, see the About page.</span>
 
+    <!-- TODO: Style [Add plus button, opens form--redirects to this page when submitted] -->
     <hr class="mb-3">
     <form action="/insert_health_checkin" method="post">
       <div>
@@ -72,14 +73,14 @@
 <div>
   <div>
     <h1>
-      Health checkins
+      Health Checkins
     </h1>
   </div>
 </div>
 
 
 <hr>
-  <!-- TODO: Style [Add plus button, opens form--redirects to this page when submitted] and add streaks -->
+  <!-- TODO: add streaks. If no checkins, say "Looks like you haven't been tracking your health. Click above to add a health checkin" -->
   <% @list_of_health_checkins.each do |a_health_checkin| %>
   <div class="card mb-4" style="background-color: #f8f9fa;">
     <div class="card-body pl-4">
