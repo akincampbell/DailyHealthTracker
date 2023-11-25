@@ -4,6 +4,14 @@ class HealthCheckinsController < ApplicationController
 
     @list_of_health_checkins = matching_health_checkins.order({ :created_at => :desc })
 
+    # Streak Count
+    @streak_count = 0
+    @list_of_health_checkins.each do |a_health_checkin|
+      if (a_health_checkin.water && a_health_checkin.grain && a_health_checkin.protein && a_health_checkin.fruit && a_health_checkin.vegetable && a_health_checkin.exercise)
+        @streak_count = @streak_count + 1     
+      end
+    end
+
     render({ :template => "health_checkins/index" })
   end
 
