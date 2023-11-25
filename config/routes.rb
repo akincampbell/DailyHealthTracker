@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   # Routes for the Health checkin resource:
 
+  # FORM PAGE
+  get("/health_checkin", { :controller => "health_checkins", :action => "checkin_page" })
+
   # CREATE
   post("/insert_health_checkin", { :controller => "health_checkins", :action => "create" })
           

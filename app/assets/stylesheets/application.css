@@ -14,7 +14,7 @@
  *= require_self
  */
 
- /* TODO: Create seperate css files per section if this file gets too long.
+ /* TODO?: Create seperate css files per section if this file gets too long.
 
  /* Navbar */
  nav {
@@ -38,3 +38,16 @@
  .card-body {
   padding-left: 2em;
  }
+
+ .checkins-heading_wrapper {
+  margin-top: 5em;
+ }
+
+ .checkin_heading {
+  text-align: center;
+  color: #0d6efd;
+ }
+
+ /* .checkin-nutrition_wrapper {
+  
+ } */

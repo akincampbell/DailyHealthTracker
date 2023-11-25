@@ -17,6 +17,10 @@ class HealthCheckinsController < ApplicationController
     render({ :template => "health_checkins/show" })
   end
 
+  def checkin_page
+    render({ :template => "health_checkins/_checkin" })
+  end
+
   def create
     the_health_checkin = HealthCheckin.new
     the_health_checkin.water = params.fetch("query_water", false)
@@ -28,8 +32,6 @@ class HealthCheckinsController < ApplicationController
     the_health_checkin.weight = params.fetch("query_weight", 0.00)
     the_health_checkin.exercise = params.fetch("query_exercise", false)
     the_health_checkin.journal = params.fetch("query_journal", false)
-
-    # TODO: Check if other posts were made today
 
     if the_health_checkin.valid?
       the_health_checkin.save
