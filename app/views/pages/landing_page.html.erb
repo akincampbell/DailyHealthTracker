@@ -1,0 +1,12 @@
+<!-- landing_page.html.erb -->
+<% if user_signed_in? %>
+  <!-- If the user is signed in, you might want to redirect or display some other content -->
+  <%= render(template: "/health_checkins/index") %>
+<% else %>
+  <!-- Display the sign-in form -->
+  <%= render  "users/sign-in" %>
+
+<!--  render 'devise/sessions/new'
+
+  link_to "Go Somewhere", some_other_path-->
+<% end %>

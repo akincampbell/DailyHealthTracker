@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  root 'pages#landing_page'
+
   # Daily Health Tracks and root routes
   root "health_checkins#index"
 
