@@ -25,6 +25,10 @@
   color: white !important;
  }
 
+ .navbar-logo_wrapper {
+  text-decoration: solid;
+ }
+
  .dropdown-menu {
   background-color: #4caf50;
  }
@@ -32,6 +36,7 @@
  .dropdown-item:hover {
   background-color: #79E70C;
  }
+
 
 
  /* Health Checkin */

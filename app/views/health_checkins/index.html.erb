@@ -11,7 +11,11 @@
 <div class="checkins-heading_wrapper">
   <div>
     <h1>
-      Health Checkins: <%= @list_of_health_checkins.length =%> | Streak: <%=  @streak_count =%>
+      Health Checkins: <%= @list_of_health_checkins.length =%>
+      <% if (@streak_count != 0 ) %>
+        | Streak: <%=  @streak_count =%>
+      <% end %>
+
     </h1>
   </div>
 </div>
@@ -22,6 +26,7 @@
     <h5><span style="color:red">⚠️</span>  Looks like you haven't been tracking your health. Click above to add a health checkin and get your health on track.</h5>
   <% end%>
 
+  <!-- TODO: Add date to Checkins; Modularize -->
   <% @list_of_health_checkins.each do |a_health_checkin| %>
   <div class="card mb-4" style="background-color: #f8f9fa;">
     <div class="card-body pl-4">
