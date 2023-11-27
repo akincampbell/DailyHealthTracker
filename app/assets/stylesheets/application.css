@@ -37,7 +37,11 @@
   background-color: #79E70C;
  }
 
-
+.logo {
+  height: 2em;
+  border-radius: 1em;
+  margin-right: 0.5em;
+}
 
  /* Health Checkin */
  .card-body {
@@ -56,3 +60,5 @@
  /* .checkin-nutrition_wrapper {
   
  } */
+
+ /*  */
