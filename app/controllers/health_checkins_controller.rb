@@ -12,7 +12,11 @@ class HealthCheckinsController < ApplicationController
       end
     end
 
-    render({ :template => "health_checkins/index" })
+    if user_signed_in?
+      render({ :template => "health_checkins/index" })
+    else
+      render({ :template => "health_checkins/login" })
+    end
   end
 
   def show
