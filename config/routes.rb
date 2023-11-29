@@ -27,9 +27,6 @@ Rails.application.routes.draw do
   #------------------------------
   # Routes for Pages:
 
-  # About page route
-  get("/about", { :controller => "pages", :action => "about" })
-
   # Smart Health page route
   get("/smart_health", { :controller => "pages", :action => "smart_health" })
 end
