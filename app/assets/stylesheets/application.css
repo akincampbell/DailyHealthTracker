@@ -49,6 +49,10 @@
 }
 
  /* Health Checkin */
+ .checkin-form_wrapper {
+  padding-bottom: 5em;
+ }
+
  .card-body {
   padding-left: 2em;
  }

@@ -1,75 +1,75 @@
-<h1 class="checkin_heading">Health Checkin</h1>
 
-<form action="/insert_health_checkin" method="post">
 
-  <div class="checkin-nutrition_wrapper mt-3">
-    <h3>Nutrition Requirements</h3>
-    <div>
-      <input type="checkbox" id="grain_box" name="query_grain" value="1">
+<div class="checkin-form_wrapper">
+  <h1 class="checkin_heading">Health Checkin</h1>
 
-      <label for="grain_box">Grain (3 - 8 bowls)</label>
-    </div>
+  <form action="/insert_health_checkin" method="post">
 
-    <div>
-      <input type="checkbox" id="protein_box" name="query_protein" value="1">
+    <div class="checkin-nutrition_wrapper mt-3">
+      <h3>Nutrition Requirements</h3>
+      <div>
+        <input type="checkbox" id="grain_box" name="query_grain" value="1">
 
-      <label for="protein_box">Protein (5 - 8 taels)</label>
-    </div>
+        <label for="grain_box">Grain (3 - 8 bowls)</label>
+      </div>
 
-    <div>
-      <input type="checkbox" id="fruit_box" name="query_fruit" value="1">
+      <div>
+        <input type="checkbox" id="protein_box" name="query_protein" value="1">
 
-      <label for="fruit_box">Fruit (at least 2 servings)</label>
-    </div>
+        <label for="protein_box">Protein (5 - 8 taels)</label>
+      </div>
 
-    <div>
-      <input type="checkbox" id="vegetable_box" name="query_vegetable" value="1">
+      <div>
+        <input type="checkbox" id="fruit_box" name="query_fruit" value="1">
 
-      <label for="vegetable_box">Vegetables (at least 3 servings)</label>
-    </div>
-  </div>
+        <label for="fruit_box">Fruit (at least 2 servings)</label>
+      </div>
 
-  <div class="mt-3">
-    <h3>Water Requirements</h3>
-    <input type="checkbox" id="water_box" name="query_water" value="1">
+      <div>
+        <input type="checkbox" id="vegetable_box" name="query_vegetable" value="1">
 
-    <label for="water_box">Water (did you get 2.3 liters?)</label>
-  </div>
-
-  <div class="mt-3">
-    <h3>Excercise Requirements</h3>
-    <input type="checkbox" id="exercise_box" name="query_exercise" value="1">
-
-    <label for="exercise_box">Exercise (did you exercise for 30 minutes?)</label>
-  </div>
-
-  <hr>
-
-  <div class="checkin-info_wrapper health-info_wrapper mt-5">
-    <h3>Health Information</h3>
-    <div>
-      <label for="weight_box">
-        Weight
-      </label>
-
-      <input type="text" id="weight_box" name="query_weight">
+        <label for="vegetable_box">Vegetables (at least 3 servings)</label>
+      </div>
     </div>
 
     <div class="mt-3">
-      <div>
-        <label for="journal_entry">Journal</label>
-      </div>
-      <textarea name="query_journal" id="journal_entry" cols="30" rows="5"></textarea>
+      <h3>Water Requirements</h3>
+      <input type="checkbox" id="water_box" name="query_water" value="1">
+
+      <label for="water_box">Water (did you get 2.3 liters?)</label>
     </div>
-  </div>
+
+    <div class="mt-3">
+      <h3>Excercise Requirements</h3>
+      <input type="checkbox" id="exercise_box" name="query_exercise" value="1">
+
+      <label for="exercise_box">Exercise (did you exercise for 30 minutes?)</label>
+    </div>
+
+    <hr>
+
+    <div class="checkin-info_wrapper health-info_wrapper mt-5">
+      <h3>Health Information</h3>
+      <div>
+        <label for="weight_box">
+          Weight
+        </label>
+
+        <input type="text" id="weight_box" name="query_weight">
+      </div>
+
+      <div class="mt-3">
+        <div>
+          <label for="journal_entry">Journal</label>
+        </div>
+        <textarea name="query_journal" id="journal_entry" cols="30" rows="5"></textarea>
+      </div>
+    </div>
 
 
 
-  <button class="btn btn-primary mt-3">
-    Create health checkin
-  </button>
-</form>
-
-<div class="">
-
+    <button class="btn btn-primary mt-3">
+      Create health checkin
+    </button>
+  </form>
 </div>
