@@ -113,4 +113,8 @@
   background-color: #4caf50;
   color: white;
   text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
  }
