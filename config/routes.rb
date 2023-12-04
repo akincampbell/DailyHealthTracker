@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :inquiries, only: [:new, :create]
+
   # Daily Health Tracks and root routes
   root "health_checkins#index"
 
@@ -28,5 +30,7 @@ Rails.application.routes.draw do
   # Routes for Pages:
 
   # Smart Health page route
-  get("/smart_health", { :controller => "pages", :action => "smart_health" })
+  # get("/smart_health", { :controller => "pages", :action => "smart_health" })
+
+  
 end
