@@ -27,7 +27,13 @@ Rails.application.routes.draw do
   get("/delete_health_checkin/:path_id", { :controller => "health_checkins", :action => "destroy" })
 
   #------------------------------
-  # Routes for Pages:
+  # Routes for Smart Health:
+
+  # NEW
+  get("/inquiries", { :controller => "inquiries", :action => "new" })
+
+  # CREATE
+  post("/inquiries_form", { :controller => "inquiries", :action => "create" })
 
   # Smart Health page route
   # get("/smart_health", { :controller => "pages", :action => "smart_health" })

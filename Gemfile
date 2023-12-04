@@ -108,7 +108,9 @@ group :test do
   gem "webmock"
 end
 
-# TODO: Additional Gems
+# Additional Gems
+gem 'httparty'
+
 # gem 'gruff', '~> 0.7.0'
 
 gem "dockerfile-rails", ">= 1.5", :group => :development

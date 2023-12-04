@@ -29,7 +29,7 @@ class InquiriesController < ApplicationController
   def generate_chatgpt_response(prompt)
     headers = {
       'Content-Type' => 'application/json',
-      'Authorization' => 'Bearer F7PM1reZiKiEMsc7F8DeT3BlbkFJ7H18oAlBcluBgJa0GoVc' # Replace with your API key
+      'Authorization' => 'DHT F7PM1reZiKiEMsc7F8DeT3BlbkFJ7H18oAlBcluBgJa0GoVc' # Replace with your API key
     }
 
     body = {
