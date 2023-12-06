@@ -1,6 +1,10 @@
 # Daily Health Tracker
 
-Purpose of app: [Insert here]
+Name of app: Daily Health Tracker
+
+Purpose of app: Prompt nutrition, exercise and water requirements. Journal health progress. Have a well informed response to health inquiries without visiting a doctor.
+
+Pain point: Remembering to meet nutrition, exercise and water requirements. Journaling health progress. Having a well informed response to health inquiries without visiting a doctor.
 
 ---------------------------------------------------------------------------------------------------------
 
