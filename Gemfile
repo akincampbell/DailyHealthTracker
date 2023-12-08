@@ -110,6 +110,8 @@ end
 
 # Additional Gems
 gem 'httparty'
+gem 'openai'
+gem "ruby-openai"
 
 # gem 'gruff', '~> 0.7.0'
 

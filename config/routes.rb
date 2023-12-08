@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # resources :inquiries, only: [:new, :create]
 
+  post '/ask', to: 'chat#ask_question'
+
   # Daily Health Tracks and root routes
   root "health_checkins#index"
 

@@ -1,0 +1,34 @@
+<!-- app/views/chat/index.html.erb -->
+
+<%= form_tag('/ask', method: 'post', id: 'question-form') do %>
+  <%= text_field_tag(:question, nil, placeholder: 'Ask a question...') %>
+  <%= submit_tag('Ask', id: 'ask-button') %>
+<% end %>
+
+<div id="response-container"></div>
+
+<script>
+  document.getElementById('question-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get the user's question
+    var question = document.getElementById('question').value;
+
+    // Send an AJAX request to the backend
+    fetch('/ask', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ question: question })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Display the response in the response container
+      document.getElementById('response-container').innerText = data.response;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  });
+</script>

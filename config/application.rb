@@ -32,5 +32,9 @@ module RailsTemplate
 
     config.action_controller.default_protect_from_forgery = false
     config.generators.system_tests = nil
+
+    OpenAI.configure do |config|
+      config.api_type = ENV['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']
+    end
   end
 end
