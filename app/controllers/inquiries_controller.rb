@@ -8,8 +8,8 @@ class InquiriesController < ApplicationController
 
   def create
     @inquiry = Inquiry.new(inquiry_params)
-
     if @inquiry.valid?
+
       response = generate_chatgpt_response(@inquiry.question)
       @gpt_response = response['choices'][0]['text'] if response
 
@@ -29,7 +29,7 @@ class InquiriesController < ApplicationController
   def generate_chatgpt_response(prompt)
     headers = {
       'Content-Type' => 'application/json',
-      'Authorization' => 'DHT F7PM1reZiKiEMsc7F8DeT3BlbkFJ7H18oAlBcluBgJa0GoVc' # Replace with your API key
+      'Authorization' => 'Bearer F7PM1reZiKiEMsc7F8DeT3BlbkFJ7H18oAlBcluBgJa0GoVc' # Replace with your API key
     }
 
     body = {

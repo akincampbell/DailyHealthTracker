@@ -1,4 +1,4 @@
-<%= form_with url: '/inquiries_form', method: :post do |form| %>
+<%= form_with model: @inquiry do |form| %>
   <%= form.label :question %>
   <%= form.text_area :question %>
   <%= form.submit "Ask GPT" %>
