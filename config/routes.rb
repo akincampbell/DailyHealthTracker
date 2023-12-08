@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :inquiries, only: [:new, :create]
+  # resources :inquiries, only: [:new, :create]
 
   # Daily Health Tracks and root routes
   root "health_checkins#index"
