@@ -111,6 +111,8 @@ end
 # Additional Gems
 gem 'httparty'
 
+gem 'simple_form'
+
 # gem 'gruff', '~> 0.7.0'
 
 gem "dockerfile-rails", ">= 1.5", :group => :development
