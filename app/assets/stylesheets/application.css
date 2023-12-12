@@ -13,3 +13,109 @@
  *= require_tree .
  *= require_self
  */
+
+ /* TODO?: Create seperate css files per section if this file gets too long.
+
+ /* Layout */
+ .page {
+  background-color: aliceblue;
+  padding-bottom: 7em;
+ }
+
+ /* Navbar */
+ nav {
+  background-color: #4caf50 !important;
+ }
+
+ nav a, nav-link {
+  color: white !important;
+ }
+
+ .navbar-logo_wrapper {
+  text-decoration: solid;
+ }
+
+ .dropdown-menu {
+  background-color: #4caf50;
+ }
+
+ .dropdown-item:hover {
+  background-color: #79E70C;
+ }
+
+.logo {
+  height: 2em;
+  border-radius: 1em;
+  margin-right: 0.5em;
+}
+
+ /* Health Checkin */
+ .checkin-form_wrapper {
+  padding-bottom: 5em;
+ }
+
+ .card-body {
+  padding-left: 2em;
+ }
+
+ .checkins-heading_wrapper {
+  margin-top: 5em;
+ }
+
+ .checkin_heading {
+  text-align: center;
+  color: #0d6efd;
+ }
+
+ .no_checkin {
+  font-style: italic;
+ }
+
+ .health-info_wrapper {
+  
+ }
+
+ /* .checkin-nutrition_wrapper {
+  
+ } */
+
+ /* Login */
+ .password, .email {
+  font-weight: 700;
+  display: block;
+ }
+
+ .password label {
+  margin-top: 1em;
+ }
+
+ .user_remember_me label {
+  margin-top: 1em;
+ }
+
+ .user_remember_me label input {
+  margin-right: 0.25em;
+ }
+
+ .form-actions .btn {
+  color: white;
+  background-color: #0d6efd;
+  margin: 2.5em 0;
+ }
+
+ .form-actions input:hover {
+  color: white;
+  background-color: #0d6efd;
+  background-color: blue;
+ }
+
+ /* Footer */
+ .footer {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+ }

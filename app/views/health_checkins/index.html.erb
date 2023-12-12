@@ -1,0 +1,107 @@
+<div>
+  <div>
+    <hr class="mt-5">
+    <a href="/health_checkin"><i class="fa fa-circle-plus fa-7x" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="checkins-heading_wrapper">
+  <div>
+    <h1>
+      Health Checkins: <%= @list_of_health_checkins.length =%>
+      <% if (@streak_count != 0 ) %>
+        | Req Met: <%=  @streak_count =%>
+      <% end %>
+
+    </h1>
+  </div>
+</div>
+
+
+<hr>
+  <% if (@list_of_health_checkins.length == 0) %>
+    <h5 class="no_checkin"><span style="color:red">⚠️</span>  Looks like you haven't been tracking your health. Click above to add a health checkin and get your health on track.</h5>
+  <% end%>
+
+  <!-- TODO: Add date to Checkins; Modularize -->
+  <% @list_of_health_checkins.each do |a_health_checkin| %>
+  <div class="card mb-4" style="background-color: #f8f9fa;">
+    <div class="card-body pl-4">
+      <div class="row card_content-wrapper">
+        <div class="col-sm">
+          <% 
+            format_date = a_health_checkin.created_at.to_s
+          %>
+          <%=
+            format_date = format_date[0..9]
+          %>
+        </div>
+        <div class="col-sm">
+          <span class="fa-solid fa-bottle-water fa-2x" style="color: #0d6efd"></span>
+        </div>
+
+        <div class="col-sm">
+          <span class="fa-solid fa-bowl-food fa-2x" style="color: #FFBF00"></span>
+        </div>
+
+        <div class="col-sm">
+          <span class="fa-solid fa-dumbbell fa-2x" style="color: purple"></span>
+        </div>
+
+        <div class="col-sm">
+          <span class="fa-solid fa-weight-scale fa-2x"></span>
+        </div>
+
+        <div class="col-sm">
+          <span>
+            <b>Details</b>
+          </span>
+        </div>
+      </div>
+
+      <div class="row card_content-wrapper">
+        <div class="col-sm">
+          <!-- Placeholder -->
+        </div>
+        <div class="col-sm">
+          <% if a_health_checkin.water %>
+            <span class="fa-solid fa-check fa-2x" style="color:green"></span>
+          <% else %>
+            <span class="fa-solid fa-x fa-2x" style="color:red"></span>
+          <% end %>
+        </div>
+
+        <div class="col-sm">
+          <% if a_health_checkin.grain && a_health_checkin.protein && a_health_checkin.fruit && a_health_checkin.vegetable %>
+            <span class="fa-solid fa-check fa-2x" style="color:green"></span>
+          <% else %>
+            <span class="fa-solid fa-x fa-2x" style="color:red"></span>
+          <% end %>
+        </div>
+
+        <div class="col-sm">
+          <% if a_health_checkin.exercise %>
+            <span class="fa-solid fa-check fa-2x" style="color:#4caf50"></span>
+          <% else %>
+            <span class="fa-solid fa-x fa-2x" style="color:red"></span>
+          <% end %>
+        </div>
+
+        <div class="col-sm">
+          <%= a_health_checkin.weight %>
+        </div>
+
+        <div class="col-sm">
+          <a href="/health_checkins/<%= a_health_checkin.id %>">
+            Show details
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+<hr>

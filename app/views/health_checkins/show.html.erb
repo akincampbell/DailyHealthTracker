@@ -1,0 +1,174 @@
+<div>
+  <div>
+    <h1>
+      Health checkin #<%= @the_health_checkin.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/health_checkins">
+          Go back
+        </a>
+      </div>
+
+      <div class="mb-5">
+        <a href="/delete_health_checkin/<%= @the_health_checkin.id %>">
+          Delete health checkin
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Water Requirements
+      </dt>
+      <dd>
+        <% if @the_health_checkin.water %>
+          <span class="fa-solid fa-check fa-2x" style="color:green"></span>
+        <% else %>
+          <span class="fa-solid fa-x fa-2x" style="color:red"></span>
+        <% end %>
+      </dd>
+
+      <dt>
+        Food requirements
+      </dt>
+      <dd>
+        <% if @the_health_checkin.grain && @the_health_checkin.protein && @the_health_checkin.fruit && @the_health_checkin.vegetable %>
+          <span class="fa-solid fa-check fa-2x" style="color:green"></span>
+        <% else %>
+          <span class="fa-solid fa-x fa-2x" style="color:red"></span>
+        <% end %>
+      </dd>
+
+      <dt>
+        Exercise
+      </dt>
+      <dd>
+        <% if @the_health_checkin.exercise %>
+          <span class="fa-solid fa-check fa-2x" style="color:green"></span>
+        <% else %>
+          <span class="fa-solid fa-x fa-2x" style="color:red"></span>
+        <% end %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_health_checkin.user_id %>
+      </dd>
+
+      <dt>
+        Weight
+      </dt>
+      <dd>
+        <%= @the_health_checkin.weight %>
+      </dd>
+
+      <dt>
+        Journal
+      </dt>
+      <dd>
+        <%= @the_health_checkin.journal %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_health_checkin.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_health_checkin.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit health checkin
+    </h2>
+
+    <form action="/modify_health_checkin/<%= @the_health_checkin.id %>"  method="post" >
+      <div>
+        <input type="checkbox" id="water_box" name="query_water" value="1" <%= "checked" if @the_health_checkin.water %>>
+
+        <label for="water_box">
+            Water
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="grain_box" name="query_grain" value="1" <%= "checked" if @the_health_checkin.grain %>>
+
+        <label for="grain_box">
+            Grain
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="protein_box" name="query_protein" value="1" <%= "checked" if @the_health_checkin.protein %>>
+
+        <label for="protein_box">
+            Protein
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="fruit_box" name="query_fruit" value="1" <%= "checked" if @the_health_checkin.fruit %>>
+
+        <label for="fruit_box">
+            Fruit
+        </label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="vegetable_box" name="query_vegetable" value="1" <%= "checked" if @the_health_checkin.vegetable %>>
+
+        <label for="vegetable_box">
+            Vegetable
+        </label>
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_health_checkin.user_id %>">
+      </div>
+
+      <div>
+        <label for="weight_box">
+          Weight
+        </label>
+
+        <input type="text" id="weight_box" name="query_weight" value="<%= @the_health_checkin.weight %>">
+      </div>
+
+      <div>
+        <input type="checkbox" id="exercise_box" name="query_exercise" value="1" <%= "checked" if @the_health_checkin.exercise %>>
+
+        <label for="exercise_box">
+            Exercise
+        </label>
+      </div>
+
+      <button class="btn btn-primary mt-4">
+        Update health checkin
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
